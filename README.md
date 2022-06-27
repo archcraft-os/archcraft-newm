@@ -22,7 +22,7 @@
 - **Web Browser** : `Firefox`
 
 ## Installation
-- **Get the files from** : [Ko-fi :coffee:](https://ko-fi.com/s/524182856f)
+- **Get the files from** : [Ko-fi :coffee:](https://ko-fi.com/s/524182856f) <sup>[**`Why Paid`**](https://github.com/adi1090x/adi1090x/blob/master/WHY.md)</sup>
 - Extract The file **newm.tar.gz** with : `tar -xzvf newm.tar.gz`
 - If you are using **`Archcraft`** as your OS, You can just install the provided package with : `sudo pacman -U archcraft-newm-1.0-1-any.pkg.tar.zst`
 - If you want to install this setup on _Arch Linux_ or on any _other distro_, follow the points below :
