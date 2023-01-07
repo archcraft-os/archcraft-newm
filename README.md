@@ -24,18 +24,16 @@
 ## Installation
 - **Get the files from** : [Ko-fi :coffee:](https://ko-fi.com/s/524182856f) <sup>[**`Why Paid`**](https://github.com/adi1090x/adi1090x/blob/master/WHY.md)</sup>
 - Extract The file **newm.tar.gz** with : `tar -xzvf newm.tar.gz`
-- If you are using **`Archcraft`** as your OS, You can just install the provided package with : `sudo pacman -U archcraft-newm-1.0-2-any.pkg.tar.zst`
+- If you are using **`Archcraft`** (`Required: 2023 or later`) as your OS, You can just install the provided package with : `sudo pacman -U archcraft-newm-2.0-0-any.pkg.tar.zst`
 - If you want to install this setup on _Arch Linux_ or on any _other distro_, follow the points below :
-  - Install the following programs on your computer: [`newm`](https://github.com/jbuchermn/newm/#installing), `wtype` `alacritty` `wlroots` `wl-clipboard` `waybar` `wofi` `foot` `mako` `grim` `slurp` `wf-recorder` `light` `yad` `wlogout` `thunar` `geany` `mpv` `mpd` `mpc` `viewnior` `imagemagick` `xfce-polkit` `xorg-xwayland`
+  - Install the following programs on your computer: [`newm`](https://github.com/jbuchermn/newm/#installing), `wtype` `alacritty` `wlroots` `wl-clipboard` `waybar` `wofi` `foot` `mako` `grim` `slurp` `wf-recorder` `light` `yad` `wlogout` `thunar` `geany` `mpv` `mpd` `mpc` `viewnior` `imagemagick` `xfce-polkit` `xorg-xwayland` `xdg-desktop-portal-wlr`
   - After installing programs above, Create _newm_ directory in **`~/.config`** : `mkdir -p ~/.config/newm`
   - Copy Everything from _`dotfiles/config`_ to **`~/.config/newm`** : `cp -r ./dotfiles/config/* ~/.config/newm/`
   - To launch `Newm` properly on your system, install the additional files provided in _`shared`_ directory :
   ```
   sudo install -Dm 755 dotfiles/shared/open-wl /usr/local/bin/open-wl
   sudo install -Dm 755 dotfiles/shared/run_newm /usr/local/bin/run_newm
-  sudo install -Dm 755 dotfiles/shared/wayland_variables /usr/local/bin/wayland_variables
   sudo install -Dm 755 dotfiles/shared/00-lock.sh /usr/lib/systemd/system-sleep/00-lock.sh
-  sudo install -Dm 644 dotfiles/shared/newm.desktop /usr/share/wayland-sessions/newm.desktop
   ```
   - Logout and login to your amazingly configured Newm.
 
