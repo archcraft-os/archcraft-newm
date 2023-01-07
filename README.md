@@ -62,6 +62,23 @@ Install the following `theme`, `icon pack`, `cursors` and `fonts` for overall ap
     └── config.py     : Main config file for NEWM
 ```
 
+### Enable Blur Effect
+
+To enable blur effect, You need to edit these files and adjust color opacity :
+- `~/.config/newm/config.py`
+  - Uncomment line <kbd>128</kbd>, <kbd>137</kbd>, <kbd>142</kbd> and <kbd>147</kbd> and comment the one below them, respectively.
+- `~/.config/newm/foot/colors.ini`
+  - set alpha value on line <kbd>6</kbd> : `alpha=0.5`
+- `~/.config/newm/mako/config`
+  - set alpha value in bg color on line <kbd>37</kbd> : `background-color=#2E344066`
+- `~/.config/newm/waybar/style.css`
+  - set alpha value in window bg-color on line <kbd>13</kbd> : `background-color: rgba(46, 52, 64, 0.5);`
+- `~/.config/newm/wlogout/style.css`
+  - set alpha value in window bg-color on line <kbd>14</kbd> : `background-color: rgba(46, 52, 64, 0.5);`
+- `~/.config/newm/wofi/style.css`
+  - set alpha value in window bg-color on line <kbd>12</kbd> : `background-color: rgba(46, 52, 64, 0.5);`
+
+
 ## Keybindings
 
 | Keys | Action |
