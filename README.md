@@ -13,8 +13,8 @@
 - **Operating System** : `Archcraft`
 - **Window Manager** : `Newm`
 - **Status Bar** : `Waybar`
-- **Launcher** : `Wofi`
-- **Session Manager** : `Wlogout`
+- **Launcher** : `Rofi` / `Wofi`
+- **Session Manager** : `Rofi` / `Wlogout`
 - **Notifications** : `Mako`
 - **Terminal** : `Foot`
 - **File Manager** : `Thunar`
@@ -24,11 +24,12 @@
 ## Installation
 - **Get the files from** : [Ko-fi :coffee:](https://ko-fi.com/s/524182856f) <sup>[**`Why Paid`**](https://github.com/adi1090x/adi1090x/blob/master/WHY.md)</sup>
 - Extract The file **newm.tar.gz** with : `tar -xzvf newm.tar.gz`
-- If you are using **`Archcraft`** (`Required: 2023 or later`) as your OS, You can just install the provided package with : `sudo pacman -U archcraft-newm-2.0-0-any.pkg.tar.zst`
+- If you are using **`Archcraft`** (`Required: 2023 or later`) as your OS, You can just install the provided package with : `sudo pacman -U archcraft-newm-3.0-0-any.pkg.tar.zst` or `sudo pacman -U archcraft-newm-blur-3.0-0-any.pkg.tar.zst`, Whichever you want to use.
 - If you want to install this setup on _Arch Linux_ or on any _other distro_, follow the points below :
-  - Install the following programs on your computer: [`newm`](https://github.com/jbuchermn/newm/#installing), `wtype` `alacritty` `wlroots` `wl-clipboard` `waybar` `wofi` `foot` `mako` `grim` `slurp` `wf-recorder` `light` `yad` `wlogout` `thunar` `geany` `mpv` `mpd` `mpc` `viewnior` `imagemagick` `xfce-polkit` `xorg-xwayland` `xdg-desktop-portal-wlr`
+  - Install the following programs on your computer: [`newm`](https://github.com/jbuchermn/newm/#installing), `wtype` `alacritty` `wlroots` `wl-clipboard` `waybar` `wofi` `foot` `mako` `grim` `slurp` `wf-recorder` `light` `yad` `wlogout` `thunar` `geany` `mpv` `mpd` `mpc` `viewnior` `imagemagick` `xfce-polkit` `xorg-xwayland` `xdg-desktop-portal-wlr` `playerctl`
   - After installing programs above, Create _newm_ directory in **`~/.config`** : `mkdir -p ~/.config/newm`
-  - Copy Everything from _`dotfiles/config`_ to **`~/.config/newm`** : `cp -r ./dotfiles/config/* ~/.config/newm/`
+  - To install **blur** style, Copy Everything from _`dotfiles/blur`_ to **`~/.config/newm`** : `cp -r ./dotfiles/blur/* ~/.config/newm/`
+  - To install **solid** style, Copy Everything from _`dotfiles/solid`_ to **`~/.config/newm`** : `cp -r ./dotfiles/solid/* ~/.config/newm/`
   - To launch `Newm` properly on your system, install the additional files provided in _`shared`_ directory :
   ```
   sudo install -Dm 755 dotfiles/shared/open-wl /usr/local/bin/open-wl
@@ -53,6 +54,7 @@ Install the following `theme`, `icon pack`, `cursors` and `fonts` for overall ap
     ├── foot          : Terminal config
     ├── mako          : Notification daemon config
     │   └── icons     : Notification icons
+    ├── rofi          : Rofi config files
     ├── scripts       : Various scripts for functionality
     ├── wallpapers    : Wallpapers
     ├── waybar        : Statusbar config
@@ -62,6 +64,15 @@ Install the following `theme`, `icon pack`, `cursors` and `fonts` for overall ap
     └── config.py     : Main config file for NEWM
 ```
 
+> By default, **`wofi`** is used as app launcher.
+>
+> But, If you want to use **rofi** instead of **wofi**, First make sure you install the [wayland fork of rofi](https://github.com/lbonn/rofi). Edit the config file `~/.config/newm/config.py` and uncomment rofi keybindings (and, comment the wofi stuff as well).
+
+> By default, **`MPD`** is used on waybar for music.
+>
+> But, If you want to use **Spotify** instead of **MPD**, Edit the config file `~/.config/newm/waybar/config` and uncomment the spotify module (and, comment the MPD module as well).
+
+<!--
 ### Enable Blur Effect
 
 To enable blur effect, You need to edit these files and adjust color opacity :
@@ -77,7 +88,7 @@ To enable blur effect, You need to edit these files and adjust color opacity :
   - set alpha value in window bg-color on line <kbd>14</kbd> : `background-color: rgba(46, 52, 64, 0.5);`
 - `~/.config/newm/wofi/style.css`
   - set alpha value in window bg-color on line <kbd>12</kbd> : `background-color: rgba(46, 52, 64, 0.5);`
-
+-->
 
 ## Keybindings
 
