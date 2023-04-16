@@ -24,7 +24,7 @@
 ## Installation
 - **Get the files from** : [Ko-fi :coffee:](https://ko-fi.com/s/524182856f) <sup>[**`Why Paid`**](https://github.com/adi1090x/adi1090x/blob/master/WHY.md)</sup>
 - Extract The file **newm.tar.gz** with : `tar -xzvf newm.tar.gz`
-- If you are using **`Archcraft`** (`Required: 2023 or later`) as your OS, You can just install the provided package with : `sudo pacman -U archcraft-newm-3.0-0-any.pkg.tar.zst` or `sudo pacman -U archcraft-newm-blur-3.0-0-any.pkg.tar.zst`, Whichever you want to use.
+- If you are using **`Archcraft`** (`Required: 2023 or later`) as your OS, You can just install the provided package with : `sudo pacman -U archcraft-newm-3.0-3-any.pkg.tar.zst` or `sudo pacman -U archcraft-newm-blur-3.0-3-any.pkg.tar.zst`, Whichever you want to use.
 - If you want to install this setup on _Arch Linux_ or on any _other distro_, follow the points below :
   - Install the following programs on your computer: [`newm`](https://github.com/jbuchermn/newm/#installing), `wtype` `alacritty` `wlroots` `wl-clipboard` `waybar` `wofi` `foot` `mako` `grim` `slurp` `wf-recorder` `light` `yad` `wlogout` `thunar` `geany` `mpv` `mpd` `mpc` `viewnior` `imagemagick` `xfce-polkit` `xorg-xwayland` `xdg-desktop-portal-wlr` `playerctl`
   - After installing programs above, Create _newm_ directory in **`~/.config`** : `mkdir -p ~/.config/newm`
@@ -72,23 +72,28 @@ Install the following `theme`, `icon pack`, `cursors` and `fonts` for overall ap
 >
 > But, If you want to use **Spotify** instead of **MPD**, Edit the config file `~/.config/newm/waybar/config` and uncomment the spotify module (and, comment the MPD module as well).
 
-<!--
-### Enable Blur Effect
+## Nvidia
+If you're on `Archcraft` and install the provided package, There's nothing else you need to do in order to run it on Nvidia machine. The package's post_installation script does it all, And the compositor should work fine.
 
-To enable blur effect, You need to edit these files and adjust color opacity :
-- `~/.config/newm/config.py`
-  - Uncomment line <kbd>128</kbd>, <kbd>137</kbd>, <kbd>142</kbd> and <kbd>147</kbd> and comment the one below them, respectively.
-- `~/.config/newm/foot/colors.ini`
-  - set alpha value on line <kbd>6</kbd> : `alpha=0.5`
-- `~/.config/newm/mako/config`
-  - set alpha value in bg color on line <kbd>37</kbd> : `background-color=#2E344066`
-- `~/.config/newm/waybar/style.css`
-  - set alpha value in window bg-color on line <kbd>13</kbd> : `background-color: rgba(46, 52, 64, 0.5);`
-- `~/.config/newm/wlogout/style.css`
-  - set alpha value in window bg-color on line <kbd>14</kbd> : `background-color: rgba(46, 52, 64, 0.5);`
-- `~/.config/newm/wofi/style.css`
-  - set alpha value in window bg-color on line <kbd>12</kbd> : `background-color: rgba(46, 52, 64, 0.5);`
--->
+If you're running any other distribution and want to install this setup on your Nvidia machine, You need to do some tweaking. In this guide, I'm assuing you're using **Arch Linux**. Follow the steps below to make this wayland compositor work on Nvidia :
+
+- Install **Nvidia Drivers** on your system. [NVIDIA](https://wiki.archlinux.org/title/NVIDIA) 
+- Edit `/etc/mkinitcpio.conf` file and add **`nvidia`** kernel modules
+```
+MODULES="nvidia nvidia_modeset nvidia_uvm nvidia_drm"
+```
+
+- In the same file, Remove `kms` hook from hooks array if present.
+- Rebuild your initrd file with : `sudo mkinitcpio -P linux`
+- Edit `/etc/default/grub` file and add **`nvidia_drm.modeset=1`** kernel parameter for Nvidia
+```
+GRUB_CMDLINE_LINUX_DEFAULT="quiet splash nvidia_drm.modeset=1 ..."
+```
+
+- Update your grub config file with : `sudo grub-mkconfig -o /boot/grub/grub.cfg`
+- Reboot your Nvidia Machine and login to your wayland compositor, It should work now.
+
+More Information: [NVIDIA#Installation](https://wiki.archlinux.org/title/NVIDIA#Installation), [NVIDIA#DRM_kernel_mode_setting](https://wiki.archlinux.org/title/NVIDIA#DRM_kernel_mode_setting)
 
 ## Keybindings
 
@@ -142,26 +147,14 @@ To enable blur effect, You need to edit these files and adjust color opacity :
 ## Screenshots
 
 **`Solid`**
-| Desktop | Tiles | Wofi |
-| --- | --- | --- |
-|![newm](screenshots/solid/newm_1.png)|![newm](screenshots/solid/newm_2.png)|![newm](screenshots/solid/newm_3.png)|
-
-| Lockscreen | Overview | Wlogout |
-| --- | --- | --- |
-|![newm](screenshots/solid/newm_4.png)|![newm](screenshots/solid/newm_5.png)|![newm](screenshots/solid/newm_6.png)|
+| Screenshot 1 | Screenshot 2 | Screenshot 3 | Screenshot 4 | Screenshot 5 |
+| --- | --- | --- | --- | --- |
+|![newm](screenshots/solid/newm_1.png)|![newm](screenshots/solid/newm_2.png)|![newm](screenshots/solid/newm_3.png)|![newm](screenshots/solid/newm_4.png)|![newm](screenshots/solid/newm_5.png)|
 
 **`Blur`**
-| Desktop | Tiles | Wofi |
-| --- | --- | --- |
-|![newm](screenshots/blur/newm_1.png)|![newm](screenshots/blur/newm_2.png)|![newm](screenshots/blur/newm_3.png)|
-
-| Lockscreen | Overview | Wlogout |
-| --- | --- | --- |
-|![newm](screenshots/blur/newm_4.png)|![newm](screenshots/blur/newm_5.png)|![newm](screenshots/blur/newm_6.png)|
-
-## FYI
-- May or may not work on [**`Nvidia`**](https://wiki.archlinux.org/title/Sway#Installation), See [wayland requirements](https://wiki.archlinux.org/title/wayland#Requirements).
-- Thank you for your support.
+| Screenshot 1 | Screenshot 2 | Screenshot 3 | Screenshot 4 | Screenshot 5 |
+| --- | --- | --- | --- | --- |
+|![newm](screenshots/blur/newm_1.png)|![newm](screenshots/blur/newm_2.png)|![newm](screenshots/blur/newm_3.png)|![newm](screenshots/blur/newm_4.png)|![newm](screenshots/blur/newm_5.png)|
 
 ---
 
