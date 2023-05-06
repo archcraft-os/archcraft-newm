@@ -24,9 +24,9 @@
 ## Installation
 - **Get the files from** : [Ko-fi :coffee:](https://ko-fi.com/s/524182856f) <sup>[**`Why Paid`**](https://github.com/adi1090x/adi1090x/blob/master/WHY.md)</sup>
 - Extract The file **newm.tar.gz** with : `tar -xzvf newm.tar.gz`
-- If you are using **`Archcraft`** (`Required: 2023 or later`) as your OS, You can just install the provided package with : `sudo pacman -U archcraft-newm-3.0-3-any.pkg.tar.zst` or `sudo pacman -U archcraft-newm-blur-3.0-3-any.pkg.tar.zst`, Whichever you want to use.
+- If you are using **`Archcraft`** (`Required: 2023 or later`) as your OS, You can just install the provided package with : `sudo pacman -U archcraft-newm-3.0-4-any.pkg.tar.zst` or `sudo pacman -U archcraft-newm-blur-3.0-4-any.pkg.tar.zst`, Whichever you want to use.
 - If you want to install this setup on _Arch Linux_ or on any _other distro_, follow the points below :
-  - Install the following programs on your computer: [`newm`](https://github.com/jbuchermn/newm/#installing), `wtype` `alacritty` `wlroots` `wl-clipboard` `waybar` `wofi` `foot` `mako` `grim` `slurp` `wf-recorder` `light` `yad` `wlogout` `thunar` `geany` `mpv` `mpd` `mpc` `viewnior` `imagemagick` `xfce-polkit` `xorg-xwayland` `xdg-desktop-portal-wlr` `playerctl`
+  - Install the following programs on your computer: [`newm-atha`](https://git.sr.ht/~atha/newm-atha), `wtype` `alacritty` `wlroots` `wl-clipboard` `waybar` `wofi` `foot` `mako` `grim` `slurp` `wf-recorder` `light` `yad` `wlogout` `thunar` `geany` `mpv` `mpd` `mpc` `viewnior` `imagemagick` `xfce-polkit` `xorg-xwayland` `xdg-desktop-portal-wlr` `playerctl`
   - After installing programs above, Create _newm_ directory in **`~/.config`** : `mkdir -p ~/.config/newm`
   - To install **blur** style, Copy Everything from _`dotfiles/blur`_ to **`~/.config/newm`** : `cp -r ./dotfiles/blur/* ~/.config/newm/`
   - To install **solid** style, Copy Everything from _`dotfiles/solid`_ to **`~/.config/newm`** : `cp -r ./dotfiles/solid/* ~/.config/newm/`
