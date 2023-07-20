@@ -24,7 +24,7 @@
 ## Installation
 - **Get the files from** : [Ko-fi :coffee:](https://ko-fi.com/s/524182856f) <sup>[**`Why Paid`**](https://github.com/adi1090x/adi1090x/blob/master/WHY.md)</sup>
 - Extract The file **newm.tar.gz** with : `tar -xzvf newm.tar.gz`
-- If you are using **`Archcraft`** (`Required: 2023 or later`) as your OS, You can just install the provided package with : `sudo pacman -U archcraft-newm-3.0-4-any.pkg.tar.zst` or `sudo pacman -U archcraft-newm-blur-3.0-4-any.pkg.tar.zst`, Whichever you want to use.
+- If you are using **`Archcraft`** (`Required: 2023 or later`) as your OS, You can just install the provided package with : `sudo pacman -U archcraft-newm-4.0-0-any.pkg.tar.zst` or `sudo pacman -U archcraft-newm-blur-4.0-0-any.pkg.tar.zst`, Whichever you want to use.
 - If you want to install this setup on _Arch Linux_ or on any _other distro_, follow the points below :
   - Install the following programs on your computer: [`newm-atha`](https://git.sr.ht/~atha/newm-atha), `wtype` `alacritty` `wlroots` `wl-clipboard` `waybar` `wofi` `foot` `mako` `grim` `slurp` `wf-recorder` `light` `yad` `wlogout` `thunar` `geany` `mpv` `mpd` `mpc` `viewnior` `imagemagick` `xfce-polkit` `xorg-xwayland` `xdg-desktop-portal-wlr` `playerctl`
   - After installing programs above, Create _newm_ directory in **`~/.config`** : `mkdir -p ~/.config/newm`
@@ -64,9 +64,9 @@ Install the following `theme`, `icon pack`, `cursors` and `fonts` for overall ap
     └── config.py     : Main config file for NEWM
 ```
 
-> By default, **`wofi`** is used as app launcher.
+> By default, **[rofi](https://github.com/lbonn/rofi)** is used as app launcher.
 >
-> But, If you want to use **rofi** instead of **wofi**, First make sure you install the [wayland fork of rofi](https://github.com/lbonn/rofi). Edit the config file `~/.config/newm/config.py` and uncomment rofi keybindings (and, comment the wofi stuff as well).
+> But, If you want to use **wofi** instead of **rofi**, Edit the config file `~/.config/newm/config.py` and uncomment wofi keybindings (and, comment the rofi stuff as well).
 
 > By default, **`MPD`** is used on waybar for music.
 >
@@ -106,9 +106,16 @@ More Information: [NVIDIA#Installation](https://wiki.archlinux.org/title/NVIDIA#
 | <kbd>super + F</kbd> | Open file manager |
 | <kbd>super + E</kbd> | Open text editor |
 | <kbd>super + W</kbd> | Open web browser|
-| <kbd>super + D</kbd> | Run app launcher |
-| <kbd>super + X</kbd> | Run powermenu |
+| <kbd>super + D</kbd> | App launcher (rofi)|
+| <kbd>super + R</kbd> | Command Runner (rofi)|
+| <kbd>super + N</kbd> | Network Menu (rofi)|
+| <kbd>super + B</kbd> | Bluetooth Menu (rofi)|
+| <kbd>super + X</kbd> | Power Menu (rofi)|
+| <kbd>super + M</kbd> | Music Player (rofi)|
+| <kbd>super + S</kbd> | Screenshot Applet (rofi)|
+| <kbd>super + D</kbd> | Run app launcher (wofi)|
 | <kbd>super + N</kbd> | Open network manager |
+| <kbd>super + X</kbd> | Run session manager (wlogout)|
 | <kbd>super + P</kbd> | Run colorpicker |
 | <kbd>super + C/Q</kbd> | Kill active window |
 | <kbd>ctrl + alt + L</kbd> | Run lockscreen |
